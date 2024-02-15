@@ -1,0 +1,15 @@
+{
+  "name": "newsletter-sign-up-with-success-message-main",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sass-compiler": "sass src/scss/main.scss src/styles/style.css -w"
+  },
+  "devDependencies": {
+    "vite": "^5.1.0"
+  }
+}
