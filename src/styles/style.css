@@ -72,8 +72,127 @@ a {
   outline: transparent;
 }
 
-body {
+.body {
   font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+.card {
+  background-color: hsl(0, 0%, 100%);
+}
+.card__illustration--desktop {
+  display: none;
+}
+.card__heading {
+  font-size: 2.5rem;
+  padding-block-end: 0.7rem;
+}
+.card__main {
+  padding: 2rem 1.5rem;
+}
+.card__list {
+  padding-block: 1.5rem 2.4rem;
+  display: grid;
+  gap: 0.7rem;
+}
+.card__list__item {
+  display: flex;
+  font-weight: 400;
+  gap: 1rem;
+}
+.card__list__item > img {
+  align-self: start;
+}
+.card--success {
+  padding-block-start: 9rem;
+  position: absolute;
+  inset-block-start: 0;
+  z-index: 100;
+  min-block-size: 100vh;
+  display: grid;
+  gap: 2.5rem;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  display: none;
+}
+.card--success__heading {
+  padding: 3rem 0 1.25rem;
+  line-height: 1;
+}
+
+.form {
+  display: grid;
+}
+.form__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.form__input {
+  border: 1px solid hsl(231, 7%, 60%);
+  border-radius: 0.5rem;
+  padding: 0.9rem 1.4rem;
+  margin-block: 0.5rem 1.5rem;
+}
+.form__input::placeholder {
+  color: hsl(231, 7%, 60%);
+}
+
+.btn {
+  border: 0;
+  background-color: hsl(4, 100%, 67%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+.btn--dismiss {
+  align-self: end;
+}
+
+span.email {
+  font-weight: 700;
+}
+
+@media (min-width: 376px) {
+  .body {
+    display: grid;
+    place-items: center;
+    background-color: black;
+  }
+  .card {
+    border-radius: 2rem;
+  }
+  .card--sign-up {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 1.5rem;
+    inline-size: min(100%, 57rem);
+  }
+  .card--success {
+    padding: 3.5rem 4rem;
+    min-block-size: auto;
+    inset-block-start: 50%;
+    translate: 0 -50%;
+    inline-size: min(100%, 32rem);
+  }
+  .card--success__heading {
+    padding-block: 2rem;
+  }
+  .card__illustration--mobile {
+    display: none;
+  }
+  .card__illustration--desktop {
+    display: block;
+  }
+  .card__main {
+    inline-size: min(100%, 27rem);
+    margin-inline: auto;
+  }
+  .card__heading {
+    font-size: 3.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
