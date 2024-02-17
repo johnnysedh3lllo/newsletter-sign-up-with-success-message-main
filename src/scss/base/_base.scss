@@ -10,12 +10,13 @@
       display: none;
     }
   }
+  &__main {
+    padding: 2rem 1.5rem;
+    color: $clr-grey-dark-slate;
+  }
   &__heading {
     font-size: 2.5rem;
     padding-block-end: 0.7rem;
-  }
-  &__main {
-    padding: 2rem 1.5rem;
   }
   &__list {
     padding-block: 1.5rem 2.4rem;
@@ -26,12 +27,19 @@
       display: flex;
       font-weight: $fw-400;
       gap: 1rem;
+
       > img {
         align-self: start;
       }
     }
   }
 
+  &--sign-up {
+    opacity: 1;
+    transition: $transition;
+  }
+
+  // padding-block-end: 0.5rem;
   &--success {
     padding-block-start: 9rem;
     position: absolute;
@@ -42,7 +50,9 @@
     gap: 2.5rem;
     justify-content: space-between;
     padding: 2rem 1.5rem;
-    display: none;
+    color: $clr-grey-dark-slate;
+    opacity: 1;
+    transition: $transition;
 
     &__heading {
       padding: 3rem 0 1.25rem;
@@ -53,33 +63,50 @@
 
 .form {
   display: grid;
+  position: relative;
   &__label {
     font-size: 0.75rem;
     font-weight: $fw-700;
-    // padding-block-end: 0.5rem;
+    color: $clr-grey-dark-slate;
   }
   &__input {
     border: 1px solid $clr-grey;
     border-radius: $border-radius;
     padding: 0.9rem 1.4rem;
     margin-block: 0.5rem 1.5rem;
+    color: $clr-grey-dark-slate;
+
+    &:active {
+      border-color: $clr-grey-dark-slate;
+    }
     &::placeholder {
       color: $clr-grey;
     }
+  }
+
+  > span.error-message {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $clr-tomato;
+    position: absolute;
+    inset-inline-end: 0;
   }
 }
 
 .btn {
   border: 0;
-  background-color: $clr-tomato;
+  background-color: $clr-grey-dark-slate;
   color: $clr-white;
   font-weight: $fw-700;
   // letter-spacing: 0.05px;
   border-radius: $border-radius;
   padding: 1rem;
   cursor: pointer;
-  &--form {
+
+  &:hover {
+    background: $clr-tomato;
   }
+
   &--dismiss {
     align-self: end;
   }
@@ -93,7 +120,7 @@ span.email {
   .body {
     display: grid;
     place-items: center;
-    background-color: black;
+    background-color: $clr-grey-charcoal;
   }
 
   .card {
@@ -131,13 +158,29 @@ span.email {
       inline-size: min(100%, 27rem);
       margin-inline: auto;
       // padding: 2rem 1rem;
-      > .container {
-        // padding-inline-end: 2rem;
-      }
+      // > .container {
+      // padding-inline-end: 2rem;
+      // }
     }
 
     &__heading {
       font-size: 3.5rem;
     }
   }
+}
+
+.fade {
+  opacity: 0;
+  z-index: -1;
+}
+
+.no-display {
+  display: none;
+}
+
+.error {
+  color: $clr-tomato;
+  border-color: $clr-tomato;
+  $clr-tomato: hsl(4, 100%, 67%, 0.1);
+  background-color: $clr-tomato;
 }
