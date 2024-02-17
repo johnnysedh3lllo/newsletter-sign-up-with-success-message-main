@@ -10,6 +10,8 @@ const dismissBtn = document.querySelector(".btn--dismiss");
 const signUpCard = document.querySelector(".card--sign-up");
 const successCard = document.querySelector(".card--success");
 
+const emailSpan = document.querySelector(".email-span");
+
 function showError() {
   if (emailInput.validity.valueMissing || emailInput.validity.typeMismatch) {
     emailError.textContent = "Valid email required";
@@ -32,8 +34,8 @@ form.addEventListener("submit", function (event) {
     showError();
   } else {
     signUpCard.classList.add("no-display");
-
     successCard.classList.remove("fade");
+    emailSpan.textContent = emailInput.value;
   }
 });
 
